@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns.top">
+            <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>
+<!--                <block class="Magento\Catalog\Block\Category\View" name="category.description" template="Trienekens_CategoryDescription::category/description.phtml"/>-->
+                <block class="Trienekens\CategoryDescription\Block\Category\View" name="category.subcategories" template="Trienekens_CategoryDescription::category/subcategories.phtml"/>
+                <block class="Magento\Catalog\Block\Category\View" name="category.cms" template="Magento_Catalog::category/cms.phtml"/>
+            </container>
+        </referenceContainer>
+        <container name="main.content.fix">
+            <block class="Magento\Catalog\Block\Category\View"
+            	name="long.category.description" as="long.category.description"
+                template="Trienekens_CategoryDescription::categorydescription.phtml" after="-" />
+        </container>
+        <move element="main.content.fix" destination="content" after="-"/>
+        <move element="page.main.title" destination="content" before="-"/>
+        <move element="category.image" destination="content" after="page.main.title"/>
+    </body>
+</page>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_RelatedBrands
+ */
+-->
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+<!--            <block class="Trienekens\RelatedBrands\Block\RelatedBrands" name="product_view_same_brands" after="product.info.details" template="Trienekens_RelatedBrands::related_brands.phtml"/>-->
+        </referenceContainer>
+    </body>
+</page>

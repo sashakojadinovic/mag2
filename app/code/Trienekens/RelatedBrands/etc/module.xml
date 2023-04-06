@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_RelatedBrands
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Trienekens_RelatedBrands" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Mageplaza_Shopbybrand"/>
+            <module name="Smartwave_Porto"/>
+        </sequence>
+    </module>
+</config>

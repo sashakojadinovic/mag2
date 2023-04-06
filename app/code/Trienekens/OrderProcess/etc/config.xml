@@ -1,0 +1,24 @@
+
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <trienekens_orderprocess>
+            <general>
+                <buyer_party_id>4317784044110</buyer_party_id>
+                <supplier_party_id>4317784000000</supplier_party_id>
+                <order_unit>C62</order_unit>
+                <live_mode>0</live_mode>
+            </general>
+            <ftp>
+                <host>ftp4.ede.de</host>
+                <upload_folder>0000531280/EDI-EXCHANGE/XML/ORDERS/IN/</upload_folder>
+            </ftp>
+        </trienekens_orderprocess>
+    </default>
+</config>

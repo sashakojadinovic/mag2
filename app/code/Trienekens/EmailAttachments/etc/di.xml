@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package    Trienekens_EmailAttachments
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Trienekens\EmailAttachments\Model\Api\MailProcessorInterface"
+                type="Trienekens\EmailAttachments\Model\MailProcessor"/>
+    <type name="Magento\Framework\Mail\Template\TransportBuilder">
+        <plugin name="trienekens_emailattachments_transportbuilder" type="Trienekens\EmailAttachments\Plugin\TransportBuilder"/>
+    </type>
+    <type name="\Magento\Framework\Mail\MimeMessageInterfaceFactory">
+        <plugin name="trienekens_emailattachments_mimemessagefactory" type="Trienekens\EmailAttachments\Plugin\MimeMessageFactory"/>
+    </type>
+
+    <!-- module introduced preferences -->
+    <preference for="Trienekens\EmailAttachments\Model\Api\AttachmentContainerInterface"
+                type="Trienekens\EmailAttachments\Model\AttachmentContainer"/>
+
+    <virtualType name="trienekens_emailattachments_invoice_pdf_renderer" type="\Trienekens\EmailAttachments\Model\PdfRenderer">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">\Magento\Sales\Model\Order\Pdf\Invoice</argument>
+        </arguments>
+    </virtualType>
+    <type name="\Trienekens\EmailAttachments\Observer\AbstractSendInvoiceObserver">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">trienekens_emailattachments_invoice_pdf_renderer</argument>
+        </arguments>
+    </type>
+    <type name="\Trienekens\EmailAttachments\Observer\AbstractSendOrderObserver">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">trienekens_emailattachments_invoice_pdf_renderer</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="trienekens_emailattachments_shipment_pdf_renderer" type="\Trienekens\EmailAttachments\Model\PdfRenderer">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">\Magento\Sales\Model\Order\Pdf\Shipment</argument>
+        </arguments>
+    </virtualType>
+    <type name="\Trienekens\EmailAttachments\Observer\AbstractSendShipmentObserver">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">trienekens_emailattachments_shipment_pdf_renderer</argument>
+        </arguments>
+    </type>
+    <type name="\Trienekens\EmailAttachments\Observer\AbstractSendInvoiceShipmentObserver">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">trienekens_emailattachments_invoice_pdf_renderer</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="trienekens_emailattachments_creditmemo_pdf_renderer" type="\Trienekens\EmailAttachments\Model\PdfRenderer">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">\Magento\Sales\Model\Order\Pdf\Creditmemo</argument>
+        </arguments>
+    </virtualType>
+    <type name="\Trienekens\EmailAttachments\Observer\AbstractSendCreditmemoObserver">
+        <arguments>
+            <argument name="pdfRenderer" xsi:type="object">trienekens_emailattachments_creditmemo_pdf_renderer</argument>
+        </arguments>
+    </type>
+
+    <!-- Override Invoice PDF template -->
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="Trienekens\EmailAttachments\Model\Rewrite\Order\Pdf\Invoice"/>
+    <preference for="Magento\Sales\Model\Order\Pdf\Items\Invoice\DefaultInvoice" type="Trienekens\EmailAttachments\Model\Rewrite\Order\Pdf\Items\Invoice\DefaultInvoice"/>
+
+    <!-- hotfix email template override issue -->
+    <type name="Magento\Framework\Filter\Template">
+        <plugin name="magento-framework-filter-template-plugin"
+                type="Trienekens\EmailAttachments\Plugin\FilterTemplatePlugin" />
+    </type>
+</config>

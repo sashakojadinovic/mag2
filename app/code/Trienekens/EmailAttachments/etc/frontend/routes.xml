@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route frontName="trienekens" id="trienekens">
+            <module name="Trienekens_EmailAttachments"/>
+        </route>
+    </router>
+</config>

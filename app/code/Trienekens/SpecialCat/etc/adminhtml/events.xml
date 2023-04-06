@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_specialcat">
+        <observer name="custom_admin_system_config_change_trienekens_specialcat" instance="Trienekens\SpecialCat\Observer\Backend\ConfigObserver"/>
+    </event>
+    <event name="catalog_product_save_before">
+        <observer name="trienekens_specialcat_update_cat_before" instance="Trienekens\SpecialCat\Observer\ProductSaveBefore" />
+    </event>
+</config>

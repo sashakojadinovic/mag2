@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Trienekens::export_operation" title="Order Export" translate="title"
+			 module="Trienekens_OrderProcess" sortOrder="20" parent="Magento_Sales::sales" resource="Trienekens_OrderProcess::OrderProcess" />
+		<add id="Trienekens_OrderProcess::trienekens_orderprocess_orderprocess" title="Order Process"
+			 module="Trienekens_OrderProcess" sortOrder="10" parent="Trienekens::export_operation" resource="Trienekens_OrderProcess::OrderProcess_export"
+			 action="trienekens_orderprocess/orderprocess/index"/>
+	</menu>
+</config>

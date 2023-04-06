@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/trienekens-orderprocess/orderprocess" method="POST">
+		<service class="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Trienekens_OrderProcess::OrderProcess_save"/>
+		</resources>
+	</route>
+	<route url="/V1/trienekens-orderprocess/orderprocess/search" method="GET">
+		<service class="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Trienekens_OrderProcess::OrderProcess_view"/>
+		</resources>
+	</route>
+	<route url="/V1/trienekens-orderprocess/orderprocess/:orderprocessId" method="GET">
+		<service class="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Trienekens_OrderProcess::OrderProcess_view"/>
+		</resources>
+	</route>
+	<route url="/V1/trienekens-orderprocess/orderprocess/:orderprocessId" method="PUT">
+		<service class="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Trienekens_OrderProcess::OrderProcess_update"/>
+		</resources>
+	</route>
+	<route url="/V1/trienekens-orderprocess/orderprocess/:orderprocessId" method="DELETE">
+		<service class="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Trienekens_OrderProcess::OrderProcess_delete"/>
+		</resources>
+	</route>
+</routes>

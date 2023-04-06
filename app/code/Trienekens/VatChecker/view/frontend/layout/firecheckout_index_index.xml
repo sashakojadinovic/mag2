@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="vat_id" xsi:type="array">
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="placeholder" xsi:type="string" translate="true">NL123456789B01</item>
+                                                                        <item name="addafter" xsi:type="string" translate="true">bijvoorbeeld: NL123456789B01</item>
+<!--                                                                        <item name="tooltip" xsi:type="array">-->
+<!--                                                                            <item name="description" xsi:type="string" translate="true">Vul uw btw-nummer in zonder spaties, bijvoorbeeld: NL123456789B01.</item>-->
+<!--                                                                        </item>-->
+                                                                    </item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="max_text_length" xsi:type="number">14</item>
+                                                                        <item name="no-whitespace" xsi:type="boolean">true</item>
+                                                                        <item name="pattern" xsi:type="string">^(BE)?0[0-9]{9}$|^(NL)?[0-9]{9}B[0-9]{2}$</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

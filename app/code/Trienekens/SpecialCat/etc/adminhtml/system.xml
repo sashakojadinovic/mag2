@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="trienekens_specialcat" translate="label" sortOrder="9000">
+            <label>Trienekens Special Category</label>
+        </tab>
+        <section id="specialcat" translate="label" sortOrder="999" showInDefault="1" showInWebsite="0" showInStore="1">
+            <class>separator-top</class>
+            <label>Special Category</label>
+            <tab>trienekens_specialcat</tab>
+            <resource>Trienekens_SpecialCat::specialcat_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <comment>This module you can enable only for store! Please switch to Store View and enable this module!</comment>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Special Category Name</label>
+                    <comment>This category will display on the frontend.</comment>
+                </field>
+                <field id="parent_id" translate="label" type="text" sortOrder="1" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Parent ID Category</label>
+                    <comment>Insert Parent Category ID</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package    Trienekens_EmailAttachments
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--Order Emails-->
+    <event name="trienekens_emailattachments_before_send_order">
+        <observer name="trienekens_emailattachments_before_send_order_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendOrderObserver"/>
+    </event>
+    <event name="trienekens_emailattachments_before_send_order_comment">
+        <observer name="trienekens_emailattachments_before_send_order_comment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendOrderCommentObserver"/>
+    </event>
+
+    <!--Invoice Emails-->
+    <event name="trienekens_emailattachments_before_send_invoice">
+        <observer name="trienekens_emailattachments_before_send_invoice_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendInvoiceObserver"/>
+    </event>
+    <event name="trienekens_emailattachments_before_send_invoice_comment">
+        <observer name="trienekens_emailattachments_before_send_invoice_comment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendInvoiceCommentObserver"/>
+    </event>
+
+    <!--Shipment Emails-->
+    <event name="trienekens_emailattachments_before_send_shipment">
+        <observer name="trienekens_emailattachments_before_send_shipment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendShipmentObserver"/>
+        <observer name="trienekens_emailattachments_before_send_invoice_shipment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendInvoiceShipmentObserver"/>
+    </event>
+    <event name="trienekens_emailattachments_before_send_shipment_comment">
+        <observer name="trienekens_emailattachments_before_send_shipment_comment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendShipmentCommentObserver"/>
+        <observer name="trienekens_emailattachments_before_send_invoice_shipment_comment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendInvoiceShipmentCommentObserver"/>
+    </event>
+
+    <!--Credit Memo Emails-->
+    <event name="trienekens_emailattachments_before_send_creditmemo">
+        <observer name="trienekens_emailattachments_before_send_creditmemo_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendCreditmemoObserver"/>
+    </event>
+    <event name="trienekens_emailattachments_before_send_creditmemo_comment">
+        <observer name="trienekens_emailattachments_before_send_creditmemo_comment_observer"
+                  instance="Trienekens\EmailAttachments\Observer\BeforeSendCreditmemoCommentObserver"/>
+    </event>
+
+</config>

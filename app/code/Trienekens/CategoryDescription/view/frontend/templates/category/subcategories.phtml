@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2021 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category sub-categories template
+ *
+ * @var $block \Trienekens\CategoryDescription\Block\Category\View
+ */
+?>
+<?php
+$category = $block->getCurrentCategory();
+$subcategories = $category->getChildrenCategories();
+?>
+<div class="category-slider porto-products wpb_content_element category-container mb-0">
+    <div class="slider-wrapper">
+        <ul class="products products-container products-slider category-pos-middle category-text-left category-color-dark show-nav-middle">
+            <?php
+            foreach ($subcategories as $subcategory) {
+                if ($subcategory->getIsActive()) {
+                    $subcategory = $block->getCategory($subcategory->getId());
+                    $url = $subcategory->getUrl(); ?>
+
+                    <li class="product-category product-col">
+                        <a href="<?php echo $url; ?>">
+                            <div class="thumb-info align-center">
+                                <div class="thumb-info-wrapper tf-none">
+                                    <img src="<?php echo $subcategory->getCustomImage() ?>" alt="">
+                                </div>
+                                <div class="thumb-info-wrap">
+                                    <div class="thumb-info-title">
+                                        <h3 class="sub-title thumb-info-inner"><?php echo $subcategory->getName(); ?></h3>
+                                        <span class="thumb-info-type"><mark class="count"><?php echo $subcategory->getProductCollection()->count() ?></mark> Producten </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <?php
+                }
+            } ?>
+        </ul>
+    </div>
+</div>

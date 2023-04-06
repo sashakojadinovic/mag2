@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2022 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_LinkedProduct
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Trienekens\LinkedProduct\Block\Product\LinkedProducts" name="product_view_linked_products" before="product.info.details"
+                   template="Trienekens_LinkedProduct::product/view/linked_products.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

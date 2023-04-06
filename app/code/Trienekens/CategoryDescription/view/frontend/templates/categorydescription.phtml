@@ -1,0 +1,17 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category Description template
+ *
+ * @var $block \Trienekens\CategoryDescription\Block\Category\View
+ */
+?>
+<?php if ($_long_description = $block->getCurrentCategory()->getTrienekensDescription()): ?>
+    <div id="toolbar-bottom" class="category-long-description">
+        <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_long_description, 'trienekens_description') ?>
+    </div>
+<?php endif; ?>

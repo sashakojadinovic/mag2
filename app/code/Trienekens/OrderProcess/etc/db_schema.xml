@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="trienekens_orderprocess_orderprocess" resource="default" engine="innodb" comment="trienekens_orderprocess_orderprocess Table">
+		<column name="order_id" nullable="false" xsi:type="int" padding="10" comment="Order ID" unsigned="true" identity="true"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="order_id"/>
+		</constraint>
+		<column name="process_status" nullable="true" xsi:type="smallint" comment="Process Status" default="0"/>
+		<column name="process_at" nullable="true" xsi:type="datetime" comment="Process Time" default="CURRENT_TIMESTAMP" on_update="true"/>
+		<column name="order_key" nullable="true" xsi:type="text" comment="Export generated key"/>
+	</table>
+</schema>

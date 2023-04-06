@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2022 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_UrlTrailer
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\UrlInterface">
+        <plugin name="trienekens_magento_framework_urlinterface" type="Trienekens\UrlTrailer\Plugin\Magento\Framework\UrlInterface"/>
+    </type>
+    <type name="Magento\Framework\View\Element\Html\Link\Current">
+        <plugin name="remove_trailing_slash" type="Trienekens\UrlTrailer\Plugin\Magento\Framework\Current"/>
+    </type>
+</config>

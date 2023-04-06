@@ -1,0 +1,70 @@
+<?php
+/**
+ * Store categories template
+ *
+ * @var $block \Trienekens\CategoryDescription\Block\Category\AllCategories
+ */
+
+$subcats=array();
+$subcategories = $block->getStoreCategories();
+foreach ($subcategories as $subcategory) {
+    $subcats[] = array('name' => ltrim($subcategory->getName()), 'url' => $subcategory->getUrl());
+}
+$columns = array_column($subcats, 'name');
+array_multisort($columns, SORT_ASC, $subcats);
+$prevLabel = "--";
+$k=0;
+echo "<div class='catlist'>";
+foreach ($subcats as $subcat) {
+	$currLabel = strtoupper(substr($subcat['name'], 0, 1));
+    if ($currLabel !== $prevLabel) {
+    	if($prevLabel !== "--") echo "<br>";
+    	echo "<h3>";
+        echo $currLabel;
+        echo "</h3>";
+        
+        $prevLabel = $currLabel;
+    }
+    echo "<div class='cat-item' >";
+    echo "<a href='".$subcat['url']."'> ".$subcat['name']."</a>";
+    echo "</div>";
+}
+echo "</div>
+<style>
+.catlist h3 {
+    font-size: .9375rem;
+    font-weight: 700;
+}
+.catlist .cat-item {
+    margin-bottom: 5px;
+}
+.catlist a {
+    color: #777;
+    font-size: 13px;
+}
+.catlist a:visited {
+    color: #777;
+}
+.catlist a:hover {
+    color: #00b1bb;
+    font-size: 13px;
+}
+@media screen and (min-width: 1024px) {
+.catlist {
+	overflow:hidden;
+    -webkit-column-count:6;
+    -moz-column-count:6;
+    -o-column-count:6;
+    column-count:6;
+}
+}
+@media screen and (max-width: 720px) {
+.catlist {
+	overflow:hidden;
+    -webkit-column-count:1;
+    -moz-column-count:1;
+    -o-column-count:1;
+    column-count:1;
+}
+}
+</style>";

@@ -1,0 +1,13 @@
+
+        <ORDER_ITEM>
+            <LINE_ITEM_ID>1</LINE_ITEM_ID>
+            <ARTICLE_ID>
+                <SUPPLIER_AID></SUPPLIER_AID>
+                <INTERNATIONAL_AID type="EAN">[EAN]</INTERNATIONAL_AID>
+                <BUYER_AID type="BP"></BUYER_AID>
+                <BUYER_AID type="IN"></BUYER_AID>
+                <DESCRIPTION_SHORT></DESCRIPTION_SHORT>
+            </ARTICLE_ID>
+            <QUANTITY>[QUANTITY]</QUANTITY>
+            <ORDER_UNIT>[ORDER_UNIT]</ORDER_UNIT>
+        </ORDER_ITEM>

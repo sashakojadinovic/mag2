@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ * @var $customBlock \Trienekens\CategoryDescription\Block\Category\View
+ */
+?>
+<?php $_description = $block->getCurrentCategory()->getDescription(); ?>
+<?php $_long_description = $block->getCurrentCategory()->getTrienekensDescription(); ?>
+<?php if ($_description && $_long_description): ?>
+    <div class="category-description read-more">
+        <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
+		<a href="#toolbar-bottom">
+			<?php echo __('Read more');?>
+		</a>
+    </div>
+<?php elseif ($_description): ?>
+	<div class="category-description">
+	    <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
+	</div>
+<?php endif; ?>

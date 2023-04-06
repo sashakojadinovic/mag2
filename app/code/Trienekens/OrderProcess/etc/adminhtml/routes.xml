@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="trienekens_orderprocess" id="trienekens_orderprocess">
+			<module before="Magento_Backend" name="Trienekens_OrderProcess"/>
+		</route>
+	</router>
+</config>

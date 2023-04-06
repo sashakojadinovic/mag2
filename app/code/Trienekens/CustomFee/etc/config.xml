@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2022 Trienekens Online. All rights reserved.
+ *
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_CustomFee
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customfee>
+            <customfee>
+                <status>1</status>
+            </customfee>
+        </customfee>
+        <customfee>
+            <customfee>
+                <name>Additional Shipping Cost</name>
+            </customfee>
+        </customfee>
+    </default>
+</config>

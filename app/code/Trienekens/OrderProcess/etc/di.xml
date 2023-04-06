@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Rudie Wang <rudie.wang.web@gmail.com>
+ * @package Trienekens_OrderProcess
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Trienekens\OrderProcess\Api\OrderProcessRepositoryInterface" type="Trienekens\OrderProcess\Model\OrderProcessRepository"/>
+	<preference for="Trienekens\OrderProcess\Api\Data\OrderProcessInterface" type="Trienekens\OrderProcess\Model\Data\OrderProcess"/>
+	<preference for="Trienekens\OrderProcess\Api\Data\OrderProcessSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Trienekens\OrderProcess\Model\ResourceModel\OrderProcess\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">trienekens_orderprocess_orderprocess</argument>
+			<argument name="resourceModel" xsi:type="string">Trienekens\OrderProcess\Model\ResourceModel\OrderProcess\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="trienekens_orderprocess_orderprocess_listing_data_source" xsi:type="string">Trienekens\OrderProcess\Model\ResourceModel\OrderProcess\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

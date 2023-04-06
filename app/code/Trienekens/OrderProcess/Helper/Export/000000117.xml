@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ORDER SYSTEM "openTRANS_ORDER_1_0.dtd">
+<ORDER version="1.0" type="standard">
+    <ORDER_HEADER>
+        <ORDER_INFO>
+            <ORDER_ID>000000117</ORDER_ID>
+            <ALT_CUSTOMER_ORDER_ID></ALT_CUSTOMER_ORDER_ID>
+            <ORDER_DATE>2021-04-21</ORDER_DATE>
+            <DELIVERY_DATE type="fixed">
+                <DELIVERY_START_DATE>2017-09-07</DELIVERY_START_DATE>
+                <DELIVERY_END_DATE>2017-09-08</DELIVERY_END_DATE>
+            </DELIVERY_DATE>
+            <ORDER_PARTIES>
+                <BUYER_PARTY>
+                    <PARTY>
+                        <PARTY_ID type="ILN">4317784044110</PARTY_ID>
+                    </PARTY>
+                </BUYER_PARTY>
+                <SUPPLIER_PARTY>
+                    <PARTY>
+                        <PARTY_ID type="ILN">4317784000000</PARTY_ID>
+                    </PARTY>
+                </SUPPLIER_PARTY>
+                <SHIPMENT_PARTIES>
+                    <DELIVERY_PARTY>
+                        <PARTY>
+                            <PARTY_ID type="supplier_specific"></PARTY_ID>
+                            <ADDRESS>
+                                <NAME>Superhandig.nl</NAME>
+                                <NAME2></NAME2>
+                                <NAME3></NAME3>
+                                <STREET>Hoofdstraat 71A</STREET>
+                                <ZIP>5757AK</ZIP>
+                                <CITY>Liessel</CITY>
+                                <COUNTRY>NL</COUNTRY>
+                            </ADDRESS>
+                        </PARTY>
+                    </DELIVERY_PARTY>
+                    <FINAL_DELIVERY_PARTY>
+                        <PARTY>
+                            <PARTY_ID type="buyer_specific"></PARTY_ID>
+                            <ADDRESS>
+                                <NAME>Developer Trienekens</NAME>
+                                <NAME2></NAME2>
+                                <NAME3></NAME3>
+                                <STREET>Surinamestraat 27 27</STREET>
+                                <ZIP>2585 GJ</ZIP>
+                                <CITY>Den Haag</CITY>
+                                <COUNTRY>NL</COUNTRY>
+                            </ADDRESS>
+                        </PARTY>
+                    </FINAL_DELIVERY_PARTY>
+                </SHIPMENT_PARTIES>
+            </ORDER_PARTIES>
+            <PARTIAL_SHIPMENT_ALLOWED>False</PARTIAL_SHIPMENT_ALLOWED>
+            <TRANSPORT>
+                <INCOTERM></INCOTERM>
+                <LOCATION>EKD</LOCATION>
+                <TRANSPORT_REMARK>10</TRANSPORT_REMARK>
+            </TRANSPORT>
+            <REMARK type="general">SUPERHANDIG.NL IS HÉT ADRES VOOR PROF. GEREEDSCHAP EN ACCESSOIRES!</REMARK>
+            <REMARK type="order">000000117</REMARK>
+        </ORDER_INFO>
+    </ORDER_HEADER>
+    <ORDER_ITEM_LIST>
+        
+        <ORDER_ITEM>
+            <LINE_ITEM_ID>1</LINE_ITEM_ID>
+            <ARTICLE_ID>
+                <SUPPLIER_AID></SUPPLIER_AID>
+                <INTERNATIONAL_AID type="EAN">5733439136617</INTERNATIONAL_AID>
+                <BUYER_AID type="BP"></BUYER_AID>
+                <BUYER_AID type="IN"></BUYER_AID>
+                <DESCRIPTION_SHORT></DESCRIPTION_SHORT>
+            </ARTICLE_ID>
+            <QUANTITY>1</QUANTITY>
+            <ORDER_UNIT>C62</ORDER_UNIT>
+        </ORDER_ITEM>
+
+    </ORDER_ITEM_LIST>
+    <ORDER_SUMMARY>
+        <TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
+    </ORDER_SUMMARY>
+</ORDER>

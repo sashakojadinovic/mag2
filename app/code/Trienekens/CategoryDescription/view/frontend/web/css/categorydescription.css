@@ -1,0 +1,11 @@
+.category-description.read-more {
+	margin: 20px 0;
+}
+.category-description.read-more p,
+.category-description.read-more a {
+	display: inline;
+}
+.category-long-description {
+	padding: 40px 0 0;
+	margin: 0;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ORDER SYSTEM "openTRANS_ORDER_1_0.dtd">
+<ORDER version="1.0" type="standard">
+    <ORDER_HEADER>
+        <ORDER_INFO>
+            <ORDER_ID>[ORDER_ID]</ORDER_ID>
+            <ORDER_NAME>[ORDER_NAME]</ORDER_NAME>
+            <ALT_CUSTOMER_ORDER_ID></ALT_CUSTOMER_ORDER_ID>
+            <ORDER_DATE>[ORDER_DATE]</ORDER_DATE>
+            <DELIVERY_DATE type="fixed">
+                <DELIVERY_START_DATE>2017-09-07</DELIVERY_START_DATE>
+                <DELIVERY_END_DATE>2017-09-08</DELIVERY_END_DATE>
+            </DELIVERY_DATE>
+            <ORDER_PARTIES>
+                <BUYER_PARTY>
+                    <PARTY>
+                        <PARTY_ID type="ILN">[BUYER_PARTY_ID]</PARTY_ID>
+                    </PARTY>
+                </BUYER_PARTY>
+                <SUPPLIER_PARTY>
+                    <PARTY>
+                        <PARTY_ID type="ILN">[SUPPLIER_PARTY_ID]</PARTY_ID>
+                    </PARTY>
+                </SUPPLIER_PARTY>
+                <SHIPMENT_PARTIES>
+                    <DELIVERY_PARTY>
+                        <PARTY>
+                            <PARTY_ID type="supplier_specific"></PARTY_ID>
+                            <ADDRESS>
+                                <NAME>Superhandig.nl</NAME>
+                                <NAME2></NAME2>
+                                <NAME3></NAME3>
+                                <STREET>Derpsestraat 37</STREET>
+                                <ZIP>5751 KB</ZIP>
+                                <CITY>Deurne</CITY>
+                                <COUNTRY>NL</COUNTRY>
+                            </ADDRESS>
+                        </PARTY>
+                    </DELIVERY_PARTY>
+                    <FINAL_DELIVERY_PARTY>
+                        <PARTY>
+                            <PARTY_ID type="buyer_specific"></PARTY_ID>
+                            <ADDRESS>
+                                <NAME>[SHIPPING_NAME]</NAME>
+                                <NAME2>[COMPANY_NAME]</NAME2>
+                                <NAME3></NAME3>
+                                <STREET>[SHIPPING_STREET]</STREET>
+                                <ZIP>[SHIPPING_ZIP_CODE]</ZIP>
+                                <CITY>[SHIPPING_CITY]</CITY>
+                                <COUNTRY>[SHIPPING_COUNTRY]</COUNTRY>
+                            </ADDRESS>
+                        </PARTY>
+                    </FINAL_DELIVERY_PARTY>
+                </SHIPMENT_PARTIES>
+            </ORDER_PARTIES>
+            <PARTIAL_SHIPMENT_ALLOWED>False</PARTIAL_SHIPMENT_ALLOWED>
+            <TRANSPORT>
+                <INCOTERM></INCOTERM>
+                <LOCATION>EKD</LOCATION>
+                <TRANSPORT_REMARK>10</TRANSPORT_REMARK>
+            </TRANSPORT>
+            <REMARK type="general">SUPERHANDIG.NL IS HÉT ADRES VOOR PROF. GEREEDSCHAP EN ACCESSOIRES!</REMARK>
+            <REMARK type="order">[ORDER_ID]</REMARK>
+        </ORDER_INFO>
+    </ORDER_HEADER>
+    <ORDER_ITEM_LIST>
+        [ORDER_ITEMS]
+    </ORDER_ITEM_LIST>
+    <ORDER_SUMMARY>
+        <TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
+    </ORDER_SUMMARY>
+</ORDER>
